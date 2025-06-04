@@ -2,210 +2,189 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Master Yourself First</title>
-  <meta name="description" content="Download 'Master Yourself First' — master discipline, focus, and emotional strength." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Download 'Master Yourself First' — the ultimate eBook to master discipline, focus, and emotional strength.">
+  <meta name="keywords" content="master yourself, monk mode, discipline, mindset, ebook download, self improvement">
+  <meta name="author" content="its-vr7">
+  <link rel="icon" href="M-Y-F.jpg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
-      font-family: 'Montserrat', sans-serif;
-      background: #0e0e0e;
-      color: #eee;
+      font-family: 'Outfit', sans-serif;
+      background: #000;
+      color: white;
       overflow-x: hidden;
     }
 
-    /* Background Video Container */
-    .video-bg {
+    /* Background Video */
+    #bgVideo {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      overflow: hidden;
-      z-index: -1;
-      filter: brightness(0.4) saturate(1.2);
-      /* subtle dark overlay via video filter */
-    }
-    .video-bg video {
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      object-position: center;
+      z-index: -10;
+      opacity: 1;
+      filter: none;
     }
 
-    /* Overlay to add subtle dark tint */
     .overlay {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(14,14,14,0.6);
-      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4); /* subtle dark overlay for text visibility */
+      z-index: -9;
     }
 
-    /* Main Content Container */
-    .content {
-      position: relative;
-      max-width: 460px;
-      margin: 8vh auto 4vh;
-      background: rgba(20, 20, 20, 0.85);
-      border-radius: 16px;
-      box-shadow: 0 0 30px #00ffd7aa;
-      padding: 2.5rem 2rem 3rem;
+    .container {
+      max-width: 500px;
+      margin: 9rem auto 3rem;
+      padding: 2rem;
       text-align: center;
-      color: #f0f0f0;
-      animation: fadeInUp 1s ease forwards;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
     }
 
-    /* Smooth fade in animation */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Ebook cover image */
-    .content img {
-      width: 160px;
-      border-radius: 14px;
-      box-shadow: 0 0 25px #00ffd7aa;
+    .container img {
+      width: 180px;
+      border-radius: 12px;
       margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15);
     }
 
     h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
       font-weight: 700;
-      font-size: 2.4rem;
       margin-bottom: 1rem;
-      color: #00ffd7;
-      text-shadow: 0 0 8px #00ffd7;
     }
 
-    /* Animated typed text */
     .typed-text {
-      font-size: 1.15rem;
-      color: #70fff7;
-      height: 28px;
-      margin-bottom: 1.6rem;
-      font-weight: 600;
-      min-height: 28px;
-      letter-spacing: 0.06em;
-      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      color: #00ffe1;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      min-height: 24px;
     }
 
     p {
       font-size: 1rem;
       color: #ccc;
       margin-bottom: 2rem;
-      line-height: 1.5;
     }
 
-    a.download-btn {
+    .download-btn {
       display: inline-block;
-      padding: 0.85rem 2.5rem;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #0b0b0b;
-      background: #00ffd7;
-      border-radius: 50px;
-      box-shadow: 0 0 15px #00ffd7aa;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #00ff73, #00e5ff);
+      color: #000;
       text-decoration: none;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.25);
     }
-    a.download-btn:hover {
-      background: #00e0bf;
-      box-shadow: 0 0 25px #00e0bfbb;
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
+    }
+
+    .extra-info {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #aaa;
     }
 
     footer {
       text-align: center;
+      color: #fff;
       font-size: 0.85rem;
-      color: #444;
-      margin-top: 3rem;
-      user-select: none;
+      padding: 2rem 1rem 1rem;
+      opacity: 0.4;
     }
 
-    @media (max-width: 520px) {
-      .content {
-        margin: 6vh 1.5rem 3vh;
-        padding: 2rem 1.5rem 2.5rem;
+    @media (max-width: 600px) {
+      .container {
+        margin-top: 5rem;
+        padding: 1.5rem;
       }
-      h1 {
-        font-size: 2rem;
-      }
-      .typed-text {
-        font-size: 1rem;
-      }
+      h1 { font-size: 1.5rem; }
+      .typed-text { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <div class="video-bg" aria-hidden="true">
-    <video autoplay muted playsinline loop>
-      <source src="ZOOOOOO.mp4" type="video/mp4" />
-      <!-- You can add more formats here for fallback -->
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="overlay" aria-hidden="true"></div>
 
-  <!-- Main content -->
-  <main class="content" role="main">
-    <img src="M-Y-F.jpg" alt="Master Yourself First ebook cover" />
+  <!-- Background Video -->
+  <video autoplay muted playsinline loop id="bgVideo">
+    <source src="12133607_1920_1080_24fps.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Subtle Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <img src="M-Y-F.jpg" alt="Master Yourself First eBook cover" />
     <h1>Master Yourself First</h1>
     <div class="typed-text" id="typed" aria-live="polite"></div>
-    <p>Discipline, clarity, and emotional strength start with mastering yourself first. Begin your transformation today.</p>
+    <p>Before you master life, master yourself. Discipline, clarity, and mental control start here.</p>
     <a href="https://www.dropbox.com/scl/fi/76fvq4nrc1h0jw6blowa1/Master-Yourself-First.pdf?rlkey=39sjce8263zncsdsol3cjvhq1&st=l0p685in&dl=1"
        class="download-btn" target="_blank" rel="noopener noreferrer">Download Now</a>
+    <div class="extra-info">
+      Learn to rule your mind, strengthen your willpower, and become emotionally unshakable.
+    </div>
   </main>
 
-  <footer>
-    © 2025 Master Yourself First. All rights reserved.
-  </footer>
+  <footer>© 2025 Master Yourself First. All rights reserved.</footer>
 
-  <!-- Typed Text Script -->
+  <!-- Typing Effect Script -->
   <script>
     const phrases = [
       "Focus Your Mind.",
       "Eliminate Distractions.",
       "Master Your Inner Peace."
     ];
-    let phraseIndex = 0, letterIndex = 0;
-    let isDeleting = false;
-    const typedElement = document.getElementById('typed');
+    let i = 0, j = 0, isDeleting = false;
 
-    function typeEffect() {
-      const currentPhrase = phrases[phraseIndex];
-      if (!isDeleting) {
-        typedElement.textContent = currentPhrase.substring(0, letterIndex + 1) + "|";
-        letterIndex++;
-        if (letterIndex === currentPhrase.length) {
-          isDeleting = true;
-          setTimeout(typeEffect, 1500);
-        } else {
-          setTimeout(typeEffect, 120);
-        }
+    function type() {
+      const element = document.getElementById('typed');
+      const word = phrases[i];
+      element.textContent = word.substring(0, j) + (j < word.length ? "|" : "");
+
+      if (!isDeleting && j < word.length) {
+        j++;
+        setTimeout(type, 100);
+      } else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(type, 50);
       } else {
-        typedElement.textContent = currentPhrase.substring(0, letterIndex) + "|";
-        letterIndex--;
-        if (letterIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeEffect, 500);
-        } else {
-          setTimeout(typeEffect, 60);
-        }
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % phrases.length;
+        setTimeout(type, 1000);
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      typeEffect();
+    document.addEventListener("DOMContentLoaded", () => {
+      type();
     });
   </script>
+
 </body>
 </html>
