@@ -9,6 +9,7 @@
   <meta name="author" content="its-vr7">
   <link rel="icon" href="M-Y-F.jpg" type="image/jpeg">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -32,19 +33,8 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      z-index: -10;
+      z-index: -1;
       opacity: 1;
-      filter: none;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.4); /* subtle dark overlay for text visibility */
-      z-index: -9;
     }
 
     .container {
@@ -52,8 +42,7 @@
       margin: 9rem auto 3rem;
       padding: 2rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.55);
       border-radius: 20px;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
@@ -130,14 +119,11 @@
 </head>
 <body>
 
-  <!-- Background Video -->
+  <!-- Your Background Video -->
   <video autoplay muted playsinline loop id="bgVideo">
-    <source src="videos/12133607_1920_1080_24fps.mp4" type="video/mp4" />
+    <source src="12133607_1920_1080_24fps.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-
-  <!-- Subtle Dark Overlay -->
-  <div class="overlay"></div>
 
   <!-- Main Content -->
   <main class="container">
