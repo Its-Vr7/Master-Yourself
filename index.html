@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Yourself First</title>
+  <meta name="description" content="Download 'Master Yourself First' — the ultimate eBook to master discipline, focus, and emotional strength.">
+  <meta name="keywords" content="master yourself, monk mode, discipline, mindset, ebook download, self improvement">
+  <meta name="author" content="its-vr7">
+  <link rel="icon" href="M-Y-F.jpg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Outfit', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 9rem auto 3rem;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .container img {
+      width: 180px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.25);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 5px #000;
+    }
+
+    .typed-text {
+      font-size: 1.1rem;
+      color: #00ffe1;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      min-height: 24px;
+      text-shadow: 0 2px 5px #000;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 5px #000;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #00ff73, #00e5ff);
+      color: #000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.25);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
+    }
+
+    .extra-info {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #f0f0f0;
+      text-shadow: 0 2px 5px #000;
+    }
+
+    footer {
+      text-align: center;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 2rem 1rem 1rem;
+      opacity: 0.5;
+      text-shadow: 0 2px 4px #000;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin-top: 5rem;
+        padding: 1.5rem;
+      }
+      h1 { font-size: 1.5rem; }
+      .typed-text { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted playsinline loop id="bgVideo">
+    <source src="857134-hd_1280_720_24fps.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Main Content -->
+  <main class="container">
+    <img src="M-Y-F.jpg" alt="Master Yourself First eBook cover" />
+    <h1>Master Yourself First</h1>
+    <div class="typed-text" id="typed" aria-live="polite"></div>
+    <p>Before you master life, master yourself. Discipline, clarity, and mental control start here.</p>
+    <a href="https://www.dropbox.com/scl/fi/76fvq4nrc1h0jw6blowa1/Master-Yourself-First.pdf?rlkey=39sjce8263zncsdsol3cjvhq1&st=l0p685in&dl=1"
+       class="download-btn" target="_blank" rel="noopener noreferrer">Download Now</a>
+    <div class="extra-info">
+      Learn to rule your mind, strengthen your willpower, and become emotionally unshakable.
+    </div>
+  </main>
+
+  <footer>© 2025 Master Yourself First. All rights reserved.</footer>
+
+  <!-- Typing Effect Script -->
+  <script>
+    const phrases = [
+      "Focus Your Mind.",
+      "Eliminate Distractions.",
+      "Master Your Inner Peace."
+    ];
+    let i = 0, j = 0, isDeleting = false;
+
+    function type() {
+      const element = document.getElementById('typed');
+      const word = phrases[i];
+      element.textContent = word.substring(0, j) + (j < word.length ? "|" : "");
+
+      if (!isDeleting && j < word.length) {
+        j++;
+        setTimeout(type, 100);
+      } else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % phrases.length;
+        setTimeout(type, 1000);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      type();
+    });
+  </script>
+
+</body>
+</html>
